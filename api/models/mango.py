@@ -8,6 +8,7 @@ class Mango(models.Model):
   name = models.CharField(max_length=100)
   ripe = models.BooleanField()
   color = models.CharField(max_length=100)
+
   owner = models.ForeignKey(
       get_user_model(),
       on_delete=models.CASCADE

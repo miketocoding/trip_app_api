@@ -3,11 +3,18 @@ from rest_framework import serializers
 
 from .models.mango import Mango
 from .models.user import User
+from .models.trip import Trip
 
 class MangoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Mango
         fields = ('id', 'name', 'color', 'ripe', 'owner')
+
+# create trip serializer
+class TripSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Trip
+        fields = "__all__"
 
 class UserSerializer(serializers.ModelSerializer):
     # This model serializer will be used for User creation
