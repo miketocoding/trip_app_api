@@ -7,6 +7,7 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 # Create your models here
 class Trip(models.Model):
     # define fields
+    image = models.CharField(max_length=255)
     location = models.CharField(max_length=100)
     start = models.DateField()
     end = models.DateField()
