@@ -14,6 +14,7 @@ class Trips(generics.ListCreateAPIView):
     def get(self, request):
         """Index request"""
         # get all trips
+        print('you are in index request')
         trips = Trip.objects.filter(owner=request.user.id)
         data = TripSerializer(trips, many=True).data
         return Response({ 'trips': data })
@@ -21,6 +22,8 @@ class Trips(generics.ListCreateAPIView):
     def post(self, request):
         """Create request"""
         # add user to request data object
+        print("value of request.data['trip']", request.data['trip'])
+        # print("value of request.data['trip']['data']", request.data['trip']['data'])
         request.data['trip']['owner'] = request.user.id
         # serialize/create trip
         trip = TripSerializer(data=request.data['trip'])
@@ -33,6 +36,7 @@ class TripDetail(generics.RetrieveUpdateDestroyAPIView):
     permission_classes=(IsAuthenticated,)
     def get(self, request, pk):
         """Show request"""
+        print('You are in Show')
         trip = get_object_or_404(Trip, pk=pk)
         if not request.user.id == trip.owner.id:
             raise PermissionDenied('Unauthorized, you do not own this trip post')

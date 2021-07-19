@@ -10,7 +10,7 @@ class Trip(models.Model):
     location = models.CharField(max_length=100)
     start = models.DateField()
     end = models.DateField()
-    participants = models.CharField(max_length=255)
+    travelers = models.CharField(max_length=255)
     rating = models.PositiveIntegerField(
     default=5, validators=[MinValueValidator(1), MaxValueValidator(10)]
     )
@@ -32,7 +32,7 @@ class Trip(models.Model):
             'location': self.location,
             'start': self.start,
             'end': self.end,
-            'participants': self.participants,
+            'travelers': self.travelers,
             'rating': self.rating,
             'standouts': self.standouts
         }
