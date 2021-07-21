@@ -2,13 +2,6 @@
 
 Past travels application. I've always loved traveling and reminiscing on them afterwards. Sometimes we forget about aspects of our trips away and that's why I created Memory Lane. With my app, users will be able to keep trip data in one place such as location, start and end dates, trip rating, other travelers, and standouts from the adventure.
 
-## User Stories
-- As a user, I want to be able to create a trip post
-- As a user, I want to be able to see all posts I’ve made
-- As a user, I want to be able to update a specific post i’ve made
-- As a user I want to be able to delete a post
-- As a user, I want to see trip posts i’ve been tagged in
-
 ## Links
 - [Deployed Client](https://miketocoding.github.io/trip-app-client/#/)
 - [Deployed API](https://trip-app-api-capstone.herokuapp.com/)
@@ -36,8 +29,6 @@ My problem-solving strategy revolved around reading the docs, google the issues 
 ## Catalog of Routes the API expects
 ```JavaScript
 # Restful routing
-path('mangos/', Mangos.as_view(), name='mangos'),
-path('mangos/<int:pk>/', MangoDetail.as_view(), name='mango_detail'),
 path('sign-up/', SignUp.as_view(), name='sign-up'),
 path('sign-in/', SignIn.as_view(), name='sign-in'),
 path('sign-out/', SignOut.as_view(), name='sign-out'),
